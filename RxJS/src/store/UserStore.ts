@@ -1,6 +1,6 @@
 import { from, Observable } from 'rxjs';
 import { reduce } from 'rxjs/operators';
-import { User } from '../models/User';
+import { User } from '../model/User';
 
 type UserId = string;
 

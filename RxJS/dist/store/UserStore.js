@@ -3,7 +3,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserStore = void 0;
 const rxjs_1 = require("rxjs");
 const operators_1 = require("rxjs/operators");
-const User_1 = require("../models/User");
+const User_1 = require("../model/User");
 class UserStore {
     constructor() {
         this.users = new Map([
