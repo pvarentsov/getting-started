@@ -1,6 +1,7 @@
 import { from, Observable } from 'rxjs';
-import { reduce } from 'rxjs/operators';
+import { reduce, take } from 'rxjs/operators';
 import { User } from '../model/User';
+import { whereAnd } from './operator/StoreOperators';
 
 type UserId = string;
 
@@ -12,11 +13,21 @@ export class UserStore {
     ['3', new User('3', 'nick_3', 'pass')]
   ]);
 
-  list(): Observable<User[]> {
-    return from(Array.from(this.users.values()))
-      .pipe(
-        reduce<User, User[]>((acc, value) => [...acc, value], [])
-      );
+  public one(filter: {id?: string}): Observable<User> {
+    return this.from().pipe(
+      whereAnd(filter),
+      take(1),
+    );
+  }
+
+  public list(): Observable<User[]> {
+    return this.from().pipe(
+      reduce<User, User[]>((acc, value) => [...acc, value], [])
+    );
+  }
+
+  private from(): Observable<User> {
+    return from(Array.from(this.users.values()));
   }
 
 }

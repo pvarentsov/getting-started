@@ -1,5 +1,12 @@
 import { UserStore } from './store/UserStore';
 
-new UserStore()
+const store: UserStore = new UserStore();
+
+store
   .list()
-  .subscribe(value => console.log(value));
+  .subscribe(value => console.log('\nList:\n', value, '\n'));
+
+store
+  .one({id: '1'})
+  .subscribe(value => console.log('One:\n', value, '\n'));
+
