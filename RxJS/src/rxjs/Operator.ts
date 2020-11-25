@@ -1,8 +1,10 @@
-import { Observable, OperatorFunction } from 'rxjs';
+import { MonoTypeOperatorFunction, Observable } from 'rxjs';
+import { filter } from 'rxjs/operators';
+import { Action } from './Action';
 
 type Filter = Record<string, unknown>;
 
-export function whereAnd<TModel>(filter: Filter): OperatorFunction<TModel, TModel> {
+export function whereAnd<TModel>(filter: Filter): MonoTypeOperatorFunction<TModel> {
   return (source: Observable<TModel>): Observable<TModel> => new Observable(subscriber => {
     source.subscribe({
       next: (item: TModel) => {
@@ -14,4 +16,8 @@ export function whereAnd<TModel>(filter: Filter): OperatorFunction<TModel, TMode
       complete: () => subscriber.complete(),
     });
   });
+}
+
+export function ofActionType<TType extends string, TPayload>(type: string): MonoTypeOperatorFunction<Action<TType, TPayload>> {
+  return filter(action => action.type === type);
 }
