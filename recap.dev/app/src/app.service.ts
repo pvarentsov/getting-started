@@ -7,15 +7,15 @@ export class AppService {
   constructor(private httpService: HttpService) {}
 
   greet(): string {
-    Logger.error('[Logger.error]: Hello World!');
-    console.error('[console.log]: Hello World!');
+    Logger.log('[Logger.log]: Hello World!');
+    console.log('[console.log]: Hello World!');
 
     return 'Hello World!';
   }
 
   throwError(): never {
     Logger.error('[Logger.error]: Error');
-    console.error('[console.log]: Error');
+    console.error('[console.error]: Error');
 
     throw new Error('Error!');
   }
@@ -23,7 +23,7 @@ export class AppService {
   request(): Observable<any> {
     return this.httpService.get('http://localhost:3000/hello').pipe(
       tap(() => {
-        Logger.log(`[Logger.error]: Request`);
+        Logger.log(`[Logger.log]: Request`);
         console.log('[console.log]: Request');
       }),
       map(res => res.data)

@@ -7,18 +7,18 @@ $ docker-compose up -d
 ## Run app
 
 ```bash
-# Change directory
+# change directory
 $ cd app
 
-# Installation
+# install libs
 $ npm install
 
-# development
+# run development mode
 $ npm run start
 
-# watch mode
+# run watch mode
 $ npm run start:dev
 
-# production mode
+# run production mode
 $ npm run start:prod
 ```
