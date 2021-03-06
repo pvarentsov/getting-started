@@ -1,7 +1,9 @@
 import { Controller, Get, HttpCode } from '@nestjs/common';
+import { ApiTags } from '@nestjs/swagger';
 import { Observable } from 'rxjs';
 import { AppService } from './app.service';
 
+@ApiTags('App')
 @Controller()
 export class AppController {
   constructor(private readonly appService: AppService) {}
