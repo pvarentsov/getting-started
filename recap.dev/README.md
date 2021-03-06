@@ -4,9 +4,18 @@
 $ npm install
 ```
 
-## Running the app
+## Run recap.dev-server
 
 ```bash
+$ docker-compose up -d
+```
+
+## Run app
+
+```bash
+# Change directory
+$ cd app
+
 # development
 $ npm run start
 
