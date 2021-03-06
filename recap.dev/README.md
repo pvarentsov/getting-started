@@ -1,3 +1,7 @@
+# Get started with [Recap.Dev](https://recap.dev/)
+
+![](asset/recap.dev.trace-screen.png)
+
 ## Run recap.dev-server
 
 ```bash
