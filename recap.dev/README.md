@@ -1,9 +1,3 @@
-## Installation
-
-```bash
-$ npm install
-```
-
 ## Run recap.dev-server
 
 ```bash
@@ -15,6 +9,9 @@ $ docker-compose up -d
 ```bash
 # Change directory
 $ cd app
+
+# Installation
+$ npm install
 
 # development
 $ npm run start
