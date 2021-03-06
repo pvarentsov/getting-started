@@ -22,3 +22,8 @@ $ npm run start:dev
 # run production mode
 $ npm run start:prod
 ```
+
+## How-to
+
+1. Recap.Dev UI starts on http://localhost:8081
+2. App API documentation starts on http://localhost:3000/docs
