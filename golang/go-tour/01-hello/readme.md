@@ -1,13 +1,12 @@
 ## Usage
 
 ```shell
-
 # build main package
-# generates "01-hello" executable file
-go build
+# generates "hello" executable file
+go build -o hello
 
 # build and run main package
-go run ./01-hello.go
+go run ./hello.go
 
 # format source code
 go fmt
