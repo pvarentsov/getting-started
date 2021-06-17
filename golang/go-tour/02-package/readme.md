@@ -1,3 +1,5 @@
+## Usage
+
 ```shell
 # build main package
 # generates "hello" executable file
