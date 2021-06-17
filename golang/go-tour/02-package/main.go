@@ -1,7 +1,7 @@
 package main
 
 import (
-	"./mymath"
+	"02-package/mymath"
 	"fmt"
 )
 
